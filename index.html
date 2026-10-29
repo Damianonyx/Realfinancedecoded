@@ -4,824 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Real Finance | Building the Trust Layer for Tokenized RWAs</title>
+  <title>Real Finance Decoded — Independent Research on Real-World Assets</title>
 
   <!-- WEBSITE ICON -->
-<link rel="icon" type="image/png" href="real-finance-favicon.png" />
-<link rel="shortcut icon" href="real-finance-favicon.ico" />
-<link rel="apple-touch-icon" href="real-finance-favicon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/real-finance-icon-blue.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="assets/real-finance-logo-blue.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/real-finance-apple-blue.png" />
 
 <!-- WHATSAPP / TELEGRAM / SOCIAL PREVIEW -->
 <meta property="og:title" content="Real Finance — Building the Trust Layer for Tokenized Capital" />
 <meta property="og:description" content="A research-based breakdown of REAL Finance, RWAs, tokenization, and the future of blockchain infrastructure." />
-<meta property="og:image" content="https://realfinancedecoded.com/real-finance-preview.png" />
-<meta property="og:image:secure_url" content="https://realfinancedecoded.com/real-finance-preview.png" />
+<meta property="og:image" content="https://realfinancedecoded.com/assets/real-finance-logo-blue.png" />
+<meta property="og:image:secure_url" content="https://realfinancedecoded.com/assets/real-finance-logo-blue.png" />
 <meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
 <meta property="og:url" content="https://realfinancedecoded.com/" />
+<meta property="og:image:alt" content="REAL Finance white logo on a blue background" />
+<meta property="og:site_name" content="Real Finance Decoded" />
 <meta property="og:type" content="website" />
 
 <!-- X / TWITTER PREVIEW -->
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image:alt" content="REAL Finance white logo on a blue background" />
 <meta name="twitter:url" content="https://realfinancedecoded.com/" />
 <meta name="twitter:title" content="Real Finance — Building the Trust Layer for Tokenized Capital" />
 <meta name="twitter:description" content="A research-based breakdown of REAL Finance, RWAs, tokenization, and the future of blockchain infrastructure." />
-<meta name="twitter:image" content="https://realfinancedecoded.com/real-finance-preview.png" />
-  <style>
-    
-    /* ===============================
-       REAL FINANCE RESEARCH WEBSITE
-       HTML + CSS + JAVASCRIPT IN ONE FILE
-       =============================== */
-
-    :root {
-      --bg: #000;
-      --text: #fff;
-      --muted: #c9c9c9;
-      --soft: #8f8f8f;
-      --card: #0b0b0b;
-      --card-2: #111;
-      --line: rgba(255, 255, 255, 0.14);
-      --line-strong: rgba(255, 255, 255, 0.28);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --max-width: 1180px;
-      --nav-height: 78px;
-      --shadow: 0 25px 90px rgba(255, 255, 255, 0.06);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% -10%, rgba(255,255,255,0.12), transparent 28rem),
-        radial-gradient(circle at 90% 8%, rgba(255,255,255,0.08), transparent 24rem),
-        linear-gradient(180deg, #000 0%, #050505 45%, #000 100%);
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    p {
-      margin: 0 0 22px;
-      color: var(--muted);
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      color: var(--text);
-      letter-spacing: -0.055em;
-      line-height: 1.05;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 8vw, 7rem);
-      max-width: 960px;
-    }
-
-    h2 {
-      font-size: clamp(2.1rem, 4.8vw, 4.3rem);
-      margin-bottom: 28px;
-    }
-
-    h3 {
-      font-size: clamp(1.45rem, 3vw, 2.35rem);
-      margin: 44px 0 16px;
-      letter-spacing: -0.04em;
-    }
-
-    ul {
-      margin: 0 0 26px;
-      padding-left: 22px;
-      color: var(--muted);
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -60px;
-      left: 16px;
-      z-index: 9999;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: #fff;
-      color: #000;
-      font-weight: 700;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 2000;
-      width: 0%;
-      height: 3px;
-      background: #fff;
-      box-shadow: 0 0 24px rgba(255,255,255,0.8);
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid var(--line);
-      background: rgba(0,0,0,0.76);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-shell {
-      width: min(var(--max-width), calc(100% - 32px));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 850;
-      letter-spacing: -0.035em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: #fff;
-      color: #000;
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-link {
-      padding: 9px 13px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1;
-      transition: 0.2s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: #000;
-      background: #fff;
-      border-color: #fff;
-      transform: translateY(-1px);
-    }
-
-    .menu-btn {
-      display: none;
-      border: 1px solid var(--line-strong);
-      background: transparent;
-      color: #fff;
-      border-radius: 999px;
-      padding: 10px 15px;
-      font: inherit;
-      cursor: pointer;
-    }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: calc(var(--nav-height) + 12px);
-      left: 16px;
-      right: 16px;
-      z-index: 999;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(10,10,10,0.96);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-    }
-
-    .mobile-menu.open {
-      display: grid;
-      gap: 8px;
-    }
-
-    .mobile-menu a {
-      padding: 13px 14px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      color: var(--muted);
-    }
-
-    .mobile-menu a:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    main {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      min-height: calc(100vh - var(--nav-height));
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-      align-items: center;
-      gap: clamp(32px, 5vw, 72px);
-      padding: clamp(56px, 8vw, 116px) 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      margin-bottom: 18px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 22px rgba(255,255,255,0.8);
-    }
-
-    .hero-subtitle {
-      max-width: 760px;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-      line-height: 1.7;
-    }
-
-    .hero-author {
-      margin-top: 14px;
-      color: #fff;
-      font-weight: 650;
-    }
-
-    .hero-author a,
-    .article-body a,
-    footer a {
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,0.35);
-      text-underline-offset: 4px;
-      overflow-wrap: anywhere;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 18px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: #fff;
-      color: #000;
-      border-color: #fff;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary:hover {
-      background: #fff;
-      color: #000;
-      border-color: #fff;
-    }
-
-    .hero-card {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-card img {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: 22px;
-      filter: grayscale(1) contrast(1.08);
-    }
-
-    .metric-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .metric {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(0,0,0,0.45);
-    }
-
-    .metric strong {
-      display: block;
-      color: #fff;
-      font-size: 1.05rem;
-      line-height: 1.2;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 6px;
-      color: var(--soft);
-      font-size: 0.9rem;
-      line-height: 1.35;
-    }
-
-    .content-section {
-      scroll-margin-top: calc(var(--nav-height) + 28px);
-      margin: clamp(42px, 8vw, 96px) 0;
-      padding: clamp(24px, 4vw, 48px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018)),
-        var(--card);
-      box-shadow: var(--shadow);
-    }
-
-    .section-kicker {
-      width: fit-content;
-      margin-bottom: 12px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--soft);
-      font-size: 0.78rem;
-      line-height: 1;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .article-body {
-      max-width: 930px;
-    }
-
-    .article-body p {
-      font-size: clamp(1.03rem, 1.5vw, 1.16rem);
-    }
-
-    .callout {
-      margin: 34px 0;
-      padding: clamp(20px, 4vw, 34px);
-      border: 1px solid var(--line-strong);
-      border-left: 4px solid #fff;
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.07);
-      color: #fff;
-      font-size: clamp(1.18rem, 2vw, 1.55rem);
-      line-height: 1.55;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-    }
-
-    .doc-figure {
-      margin: 32px 0;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .doc-figure img {
-      max-height: 520px;
-      object-fit: contain;
-      border-radius: 14px;
-      background: #030303;
-      filter: grayscale(1) contrast(1.05);
-    }
-
-    .flow-list {
-      display: grid;
-      gap: 10px;
-      margin: 26px 0;
-    }
-
-    .flow-list div {
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .formula-card {
-      margin: 24px 0;
-      padding: 22px;
-      border-radius: var(--radius-md);
-      background: #fff;
-      color: #000;
-      font-size: clamp(1.25rem, 3vw, 2rem);
-      font-weight: 900;
-      text-align: center;
-      letter-spacing: -0.03em;
-    }
-
-    .table-wrap {
-      width: 100%;
-      margin: 28px 0;
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.035);
-    }
-
-    table {
-      width: 100%;
-      min-width: 720px;
-      border-collapse: collapse;
-      font-size: 1rem;
-      line-height: 1.55;
-    }
-
-    th, td {
-      padding: 16px 18px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--line);
-    }
-
-    th {
-      background: #fff;
-      color: #000;
-      font-weight: 900;
-    }
-
-    td {
-      color: var(--muted);
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .resource-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .resource-link {
-      display: inline-flex;
-      padding: 12px 15px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-      transition: 0.2s ease;
-    }
-
-    .resource-link:hover {
-      background: #fff;
-      color: #000;
-      transform: translateY(-2px);
-    }
-
-    .contact-section {
-      margin: clamp(42px, 8vw, 96px) 0 64px;
-      padding: clamp(26px, 5vw, 54px);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, #fff 0%, #d7d7d7 100%);
-      color: #000;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .contact-section h2 {
-      color: #000;
-      margin-bottom: 8px;
-    }
-
-    .contact-section p {
-      color: rgba(0,0,0,0.72);
-      max-width: 760px;
-    }
-
-    .contact-section .btn {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-      white-space: nowrap;
-    }
-
-    footer {
-      width: min(var(--max-width), calc(100% - 32px));
-      margin: 0 auto;
-      padding: 0 0 42px;
-      color: var(--soft);
-      text-align: center;
-    }
-
-    footer p {
-      margin-bottom: 8px;
-      color: var(--soft);
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 800;
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      border: 1px solid var(--line-strong);
-      background: #fff;
-      color: #000;
-      cursor: pointer;
-      font-size: 20px;
-      transform: translateY(90px);
-      transition: 0.2s ease;
-    }
-
-    .back-to-top.show {
-      transform: translateY(0);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .desktop-nav {
-        display: none;
-      }
-
-      .menu-btn {
-        display: inline-flex;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 44px;
-      }
-
-      .hero-card {
-        order: -1;
-      }
-
-      .metric-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-section {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-section .btn {
-        width: fit-content;
-      }
-    }
-
-    @media (max-width: 620px) {
-      :root {
-        --nav-height: 70px;
-      }
-
-      body {
-        font-size: 17px;
-      }
-
-      main,
-      .nav-shell,
-      footer {
-        width: min(100% - 24px, var(--max-width));
-      }
-
-      .brand span:last-child {
-        max-width: 180px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      h1 {
-        font-size: clamp(2.75rem, 14vw, 4.6rem);
-      }
-
-      .content-section {
-        padding: 22px 16px;
-        border-radius: 22px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      table {
-        min-width: 650px;
-        font-size: 0.95rem;
-      }
-
-      th, td {
-        padding: 13px 14px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+<meta name="twitter:image" content="https://realfinancedecoded.com/assets/real-finance-logo-blue.png" />
+  <meta name="description" content="Independent research by GeekyDamian on REAL Finance, real-world asset tokenization, risk, and the future of blockchain infrastructure." />
+  <meta name="theme-color" content="#224cf4" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
+<noscript><style>.menu-button{display:none}.mobile-menu[hidden]{display:block!important}</style></noscript>
 </head>
-
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="nav-shell">
-      <a href="#home" class="brand" aria-label="Real Finance home">
-        <span class="brand-mark">RF</span>
-        <span>REAL FINANCE</span>
-      </a>
-
+    <div class="nav-shell container">
+      <a href="#home" class="brand" aria-label="Real Finance Decoded home"><img class="brand-mark" src="assets/real-finance-logo-blue.png" alt="" width="40" height="40"><span>real finance<span class="brand-caption">D E C O D E D</span></span></a>
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#problem" class="nav-link">Problem</a>
-        <a href="#deep-dive" class="nav-link">Deep Dive</a>
-        <a href="#technical" class="nav-link">Tech</a>
-        <a href="#updates" class="nav-link">Updates</a>
-        <a href="#comparison" class="nav-link">Compare</a>
-        <a href="#future" class="nav-link">Future</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#explore" data-nav="research">The research</a>
+        <a href="#about" data-nav="about">Behind the blog</a>
+        <a href="#resources" data-nav="resources">Resources <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </nav>
-
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">
-        Menu
-      </button>
+      <a class="button button-small header-cta" href="#problem">Start reading <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <button class="menu-button" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu"><span id="menuLabel">Menu</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" hidden>
+      <a href="#explore">The research</a><a href="#about">Behind the blog</a><a href="#resources">Resources</a><a href="#problem">Start reading <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    </nav>
   </header>
-
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-    <a href="#home">Home</a>
-    <a href="#problem">Problem</a>
-    <a href="#deep-dive">Deep Dive</a>
-    <a href="#technical">Tech</a>
-    <a href="#updates">Updates</a>
-    <a href="#comparison">Compare</a>
-    <a href="#future">Future</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main id="main">
-    <!-- HOME PAGE -->
-    <section id="home" class="hero reveal visible">
-      <div class="hero-copy">
-        <div class="eyebrow">Independent Research Thesis</div>
-
-        <h1>Real Finance: Building the Trust Layer for Tokenized Real World Assets</h1>
-
-        <p class="hero-subtitle">
-          Independent Research Thesis on REAL Ecosystem • RWA Tokenization • Institutional Blockchain Infrastructure • #UCCC
-        </p>
-
-        <p class="hero-author">
-          Research Blog by ➺
-          <a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">GeekyDamian</a>
-        </p>
-
-        <div class="hero-actions">
-          <a href="#problem" class="btn btn-primary">Read Research</a>
-          <a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Contact</a>
+  <main id="main" tabindex="-1">
+    <div id="homePage">
+      <section class="hero" id="home" aria-labelledby="heroTitle">
+        <div class="hero-atmosphere" aria-hidden="true"><div class="stars stars-one"></div><div class="stars stars-two"></div><div class="orbital-horizon"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="hero-content container">
+          <div class="eyebrow"><span class="status-dot"></span> INDEPENDENT RESEARCH. A DIFFERENT PERSPECTIVE.</div>
+          <h1 id="heroTitle">Real-world finance.<br>A clearer <em>perspective.</em></h1>
+          <p class="hero-description">Exploring the ideas, risks, and infrastructure behind<br class="desktop-break"> tokenized assets. One deep dive at a time.</p>
+          <div class="hero-actions"><a href="#problem" class="button button-primary">Start reading <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+          <a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer" class="hero-byline"><span class="avatar avatar-small">GD</span><span>A research journal by <strong>GeekyDamian</strong></span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
         </div>
-      </div>
-
-      <aside class="hero-card" aria-label="Real Finance preview image">
-        <figure class="doc-figure">
-          <a href="https://ibb.co/fz74fWXt" target="_blank" rel="noopener noreferrer">
-            <img src="https://i.ibb.co/HfQn6yKY/Screenshot-20260523-111412-Chrome.jpg" alt="Real Finance screenshot" loading="lazy" />
+        <div class="hero-bottom container"><span>CURIOUS MINDS. REAL-WORLD QUESTIONS.</span><a href="#explore" aria-label="Scroll to the research library"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a><span>EST. 2026 <span class="tiny-star">✧</span> #UCCC</span></div>
+      </section>
+      <div class="topic-strip"><div class="container"><span>REAL-WORLD ASSETS</span><i>✧</i><span>PROTOCOL DESIGN</span><i>✧</i><span>RISK &amp; INSURANCE</span><i>✧</i><span>ONCHAIN INFRASTRUCTURE</span></div></div>
+      <section class="research-library container" id="explore" aria-labelledby="libraryTitle">
+        <div class="section-heading"><div><div class="eyebrow">FROM THE BLOG</div><h2 id="libraryTitle">Ideas worth a closer look.</h2></div><p>A little less noise.<br> A deeper understanding of what matters.</p></div>
+        <div class="research-grid" id="researchGrid">
+          <a href="#problem" class="research-card featured-card" data-chapter="problem" data-category="foundations">
+            <div class="featured-copy"><div class="card-eyebrow"><span class="pill">FEATURED RESEARCH</span></div><h3>Building the trust layer<br>for real-world assets.</h3><p>Tokenization is only the beginning. Explore the infrastructure gap — and the REAL Finance thesis for closing it.</p><div class="card-meta"><span>Foundations</span><span class="meta-dot">·</span><span data-read-time="problem">Research chapter</span></div><span class="text-link">Read the opening chapter <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+            <div class="featured-visual" aria-hidden="true"><span class="visual-label">FROM REAL-WORLD VALUE</span><img src="assets/trust-layers.svg" alt="" width="480" height="330"><span class="visual-label">TO ONCHAIN POSSIBILITY</span></div>
           </a>
-        </figure>
+          <a href="#deep-dive" class="research-card small-card" data-chapter="deep-dive" data-category="protocol"><div class="card-visual art-orbits"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><ellipse cx="160" cy="95" rx="78" ry="36" transform="rotate(-32 160 95)"/><ellipse cx="160" cy="95" rx="78" ry="36" transform="rotate(32 160 95)"/><circle cx="160" cy="95" r="37"/><circle class="art-dot" cx="97" cy="133" r="5"/><circle class="art-dot" cx="222" cy="58" r="5"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Protocol design</div><h3>Inside the REAL ecosystem</h3><p>Dual validators, native insurance, and a different approach to trust.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="deep-dive">Research chapter</span></div></div></a>
+          <a href="#technical" class="research-card small-card" data-chapter="technical" data-category="protocol"><div class="card-visual art-layers"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><path d="m160 37 88 43-88 43-88-43Z"/><path d="m72 103 88 43 88-43M72 126l88 43 88-43"/><path class="art-faint" d="M160 38v130M72 80v46M248 80v46"/><circle class="art-dot" cx="160" cy="80" r="5"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Protocol design</div><h3>The architecture of trust</h3><p>Follow the asset lifecycle, from risk scoring to tokenomics and settlement.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="technical">Research chapter</span></div></div></a>
+          <a href="#updates" class="research-card small-card" data-chapter="updates" data-category="ecosystem"><div class="card-visual art-network"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><path d="m160 95-65-43m65 43 70-46m-70 46-77 44m77-44 70 48m-70-48V30m0 65v65"/><circle cx="160" cy="95" r="25"/><circle cx="95" cy="52" r="10"/><circle cx="230" cy="49" r="10"/><circle cx="83" cy="139" r="10"/><circle cx="230" cy="143" r="10"/><circle class="art-dot" cx="160" cy="30" r="5"/><circle class="art-dot" cx="160" cy="160" r="5"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Ecosystem</div><h3>An ecosystem in motion</h3><p>The partnerships and integrations shaping the REAL Finance ecosystem.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="updates">Research chapter</span></div></div></a>
+          <a href="#comparison" class="research-card small-card" data-chapter="comparison" data-category="ecosystem"><div class="card-visual art-columns"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><path d="M88 151V83l36-18v86m18 0V55l36-18v114m18 0V99l36-18v70M70 151h180"/><path class="art-faint" d="M88 83l36 18m18-46 36 18m18 26 36 18M124 65v86M178 37v114M232 81v70"/><path d="m80 50 66-25 57 18 40-15"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Ecosystem</div><h3>REAL in the wider landscape</h3><p>A closer look at other Layer-1 networks and RWA tokenization platforms.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="comparison">Research chapter</span></div></div></a>
+          <a href="#future" class="research-card small-card" data-chapter="future" data-category="foundations"><div class="card-visual art-paths"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><path d="M60 145c55 0 35-100 100-100s45 100 100 100M60 95c55 0 35 50 100 50s45-100 100-100M60 45c55 0 35 50 100 50s45 0 100 0"/><circle class="art-dot" cx="160" cy="45" r="5"/><circle class="art-dot" cx="160" cy="95" r="5"/><circle class="art-dot" cx="160" cy="145" r="5"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Foundations</div><h3>Beyond the monolithic chain</h3><p>Why modular infrastructure matters for the next chapter of onchain finance.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="future">Research chapter</span></div></div></a>
+          <a href="#verdict" class="research-card small-card" data-chapter="verdict" data-category="foundations"><div class="card-visual art-spark"><svg class="chapter-art" viewBox="0 0 320 190" fill="none" aria-hidden="true"><circle cx="160" cy="95" r="64"/><circle class="art-faint" cx="160" cy="95" r="81"/><path d="M160 43c0 35-17 52-52 52 35 0 52 17 52 52 0-35 17-52 52-52-35 0-52-17-52-52Z"/><circle class="art-dot" cx="224" cy="95" r="5"/></svg><span class="card-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></div><div class="card-copy"><div class="card-eyebrow">Foundations</div><h3>The thesis, decoded</h3><p>The structural opportunity, the open questions, and what execution must prove.</p><div class="card-meta"><span>Read chapter →</span><span data-read-time="verdict">Research chapter</span></div></div></a>
 
-        <div class="metric-strip">
-          <div class="metric">
-            <strong>RWA</strong>
-            <span>Tokenization infrastructure</span>
-          </div>
-
-          <div class="metric">
-            <strong>Risk</strong>
-            <span>Metadata, scoring, insurance</span>
-          </div>
-
-          <div class="metric">
-            <strong>L1</strong>
-            <span>Purpose-built blockchain layer</span>
-          </div>
         </div>
-      </aside>
-    </section>
+      </section>
+      <section class="about-section" id="about" aria-labelledby="aboutTitle"><div class="container about-grid"><div class="about-portrait" aria-hidden="true"><div class="portrait-orbit"></div><span class="portrait-monogram">gd<span>✳︎</span></span><span class="portrait-caption">THE MIND BEHIND THE RESEARCH</span></div><div class="about-copy"><div class="eyebrow">A NOTE FROM THE RESEARCHER</div><h2 id="aboutTitle">Curiosity first.<br><em>Conviction earned.</em></h2><p>I'm GeekyDamian. This is my independent deep dive into the REAL ecosystem — connecting the dots between tokenized assets, risk, and the next generation of blockchain infrastructure.</p><p>Explore the ideas. Follow the sources. Form your own perspective.</p><a class="text-link" href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">Find me on X <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div></div></section>
+      <section class="contact-section container" id="contact" aria-labelledby="contactTitle"><div><div class="eyebrow">KEEP THE CONVERSATION GOING</div><h2 id="contactTitle">Good research starts<br>with <em>better questions.</em></h2><p>A question, a different perspective, or an idea worth exploring?</p></div><a class="button button-primary" href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">Let's talk on X <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></section>
+    </div>
+    <div class="reader-page container" id="readerLayout">
+      <div class="reader-main">
+        <a href="#explore" class="back-link">← Back to the blog</a>
 
-    <!-- THE RWA PROBLEM -->
-    <section id="problem" class="content-section reveal">
-      <div class="section-kicker">THE RWA PROBLEM.</div>
-      <h2>THE RWA PROBLEM.</h2>
+<section id="problem" class="content-section">
+      <div class="section-kicker">CHAPTER 01 <span>/</span> FOUNDATIONS</div>
+      <h1 tabindex="-1">The RWA problem</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="problem">Research chapter</span></div>
 
       <div class="article-body">
         <p>Global fixed income markets reached $126.9 trillion in 2021 according to SIFMA data Sifma</p>
@@ -848,13 +121,13 @@
           <li>For Decentralization; By leveraging Cosmos Tendermint, Real enables an open infrastructure layer where participants can tokenize assets, provide risk assessments, and underwrite cash flows, while validator governance is enforced through clear staking-based mechanisms.</li>
         </ul>
 
-        <h3>Why Real Finance Matters.</h3>
+        <h2>Why Real Finance Matters.</h2>
 
         <p>While general-purpose Layer1 blockchains and existing tokenization platforms have made incremental progress, they were never designed from the ground up to handle the full complexity of institutional-grade Real World Assets (RWAs). Real Finance is different; it is a purpose built Layer1 blockchain engineered specifically as infrastructure for regulated RWA tokenization, not merely another tokenization application layered on top of existing chains.</p>
 
         <p>REAL was created to solve the structural limitations that have kept TradFi and DeFi in separate silos. Instead of bolting compliance, risk management, and insurance onto a general purpose blockchain as afterthoughts, REAL embeds these capabilities natively at the protocol level. This fundamental design choice positions REAL as a new category of blockchain infrastructure — one purpose built for the trillions in capital that institutions need to move onchain with regulatory confidence.</p>
 
-        <h3>A Purpose Built Layer1, Not Just Another Tokenization App.</h3>
+        <h2>A Purpose Built Layer1, Not Just Another Tokenization App.</h2>
 
         <p>Most RWA projects operate as decentralized applications (dApps) built on top of public, general-purpose Layer1 networks. This creates a massive structural mismatch. Networks like Ethereum were optimized for censorship resistance and permissionless. They possess no inherent understanding of securities law, regulatory compliance, or real world identity.</p>
 
@@ -862,7 +135,7 @@
 
         <p>Real Finance is different. It is an institutional grade Layer-1 blockchain optimized exclusively for RWAs. Instead of forcing compliance onto the chain, Real Finance builds compliance into the chain. Through its Dual Validator System, the network separates pure cryptographic consensus from business and regulatory validation. It handles identity, jurisdictional restrictions, and T+0 settlement logic at the base layer, providing institutions with a predictable, legally compliant environment that generic chains simply cannot offer.</p>
 
-        <h3>Native Risk Metadata.</h3>
+        <h2>Native Risk Metadata.</h2>
 
         <p>In traditional finance, an asset's value is entirely dependent on its underlying risk profile —its credit rating, collateral health, valuation audits, and legal jurisdictions.</p>
 
@@ -879,12 +152,10 @@
           <li>Legal ownership and enforceability data</li>
         </ul>
       </div>
-    </section>
-
-    <!-- DEEPER DIVE -->
-    <section id="deep-dive" class="content-section reveal">
-      <div class="section-kicker">DEEPER DIVE INTO REAL FINANCE.</div>
-      <h2>DEEPER DIVE INTO REAL FINANCE.</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#explore"><span>THE COLLECTION</span>← All research</a><a href="#deep-dive"><span>NEXT CHAPTER</span>Inside the REAL ecosystem →</a></nav></section>
+<section id="deep-dive" class="content-section">
+      <div class="section-kicker">CHAPTER 02 <span>/</span> PROTOCOL DESIGN</div>
+      <h1 tabindex="-1">Inside the REAL ecosystem</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="deep-dive">Research chapter</span></div>
 
       <div class="article-body">
         <p>Real Finance [REAL] is a purpose built Layer-1 blockchain designed specifically for institutional grade real-world asset (RWA) tokenization and risk managed capital flows.</p>
@@ -893,7 +164,7 @@
 
         <p>REAL is an EVM-compatible, Cosmos-based Layer-1 that leverages the security and finality typical of Cosmos-style consensus while enabling seamless developer adoption through Ethereum-compatible tooling. It supports IBC-style interoperability, allowing secure cross-chain communication with other Cosmos ecosystem chains and broader blockchain networks. This foundation enables REAL to operate as an open, permissionless network while meeting the stringent requirements of regulated financial assets.</p>
 
-        <h3>Dual Validator System.</h3>
+        <h2>Dual Validator System.</h2>
 
         <p>Real Finance’s validator design is one of the key parts of its RWA infrastructure model. Instead of relying only on traditional blockchain validators, Real separates validation into two layers: technical validators and business validators.</p>
 
@@ -921,7 +192,7 @@
 
         <p>In Real Finance, validators are designed to protect both the network and the asset lifecycle.</p>
 
-        <h3>THE INSURANCE LAYER</h3>
+        <h2>THE INSURANCE LAYER</h2>
 
         <p>One of the more important parts of Real Finance’s RWA design is its insurance layer.</p>
 
@@ -941,7 +212,7 @@
 
         <p>Real’s model is more native to RWAs. Insurance is connected to the asset’s structure, risk profile, and validator framework. The asset is not just tokenized first and insured later. Instead, insurance becomes part of how the asset is classified, evaluated, and presented to investors.</p>
 
-        <h3>DRF</h3>
+        <h2>DRF</h2>
 
         <p>The Disaster Recovery Fund [DRF]  is Real Finance’s protocol-level fallback mechanism for extreme failure scenarios. agreements, legal enforcement, or offchain recovery processes. If an insurer fails to honor its obligations, asset holders may be left waiting on courts, counterparties or private settlement arrangements.</p>
 
@@ -953,19 +224,17 @@
 
         <p>If an insurance provider fails to pay its obligations, affected asset holders can receive Network Debt Tokens representing their realized losses. These NDTs are then redeemable over time against the Disaster Recovery Fund, giving investors a structured recovery path rather than leaving them fully exposed to insurer failure.</p>
       </div>
-    </section>
-
-    <!-- TECHNICAL ANALYSIS -->
-    <section id="technical" class="content-section reveal">
-      <div class="section-kicker">TECHNICAL ANALYSIS</div>
-      <h2>TECHNICAL ANALYSIS</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#problem"><span>PREVIOUS CHAPTER</span>← The RWA problem</a><a href="#technical"><span>NEXT CHAPTER</span>The architecture of trust →</a></nav></section>
+<section id="technical" class="content-section">
+      <div class="section-kicker">CHAPTER 03 <span>/</span> PROTOCOL DESIGN</div>
+      <h1 tabindex="-1">The architecture of trust</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="technical">Research chapter</span></div>
 
       <div class="article-body">
         <p>Can Real turn real-world assets into programmable financial instruments without sacrificing asset security, validator accountability, risk visibility, or investor protection?</p>
 
         <p>Real’s design starts from that problem. Its materials describe the network as infrastructure for compliant tokenization, risk-managed capital flows, business validators, embedded metadata, onchain insurance, and the broader RWA opportunity.</p>
 
-        <h3>The Protocol's Architecture</h3>
+        <h2>The Protocol's Architecture</h2>
 
         <p>Real’s protocol architecture is best understood as an asset lifecycle system. production, finality, and transaction settlement. It also needs asset submission, risk scoring, insurance underwriting, metadata embedding, token minting, secondary trading, cash flow distribution and recovery logic.</p>
 
@@ -983,7 +252,7 @@
           <div>Redemption / Claim / Recovery</div>
         </div>
 
-        <h3>Asset submission by a Tokenization Provider.</h3>
+        <h2>Asset submission by a Tokenization Provider.</h2>
 
         <p>The process begins when a tokenization provider brings a cash flow generating asset into the Real network. These assets can include SME credit, corporate and sovereign debt, real-estate-backed instruments, receivables, revenue-sharing arrangements, and insurance-wrapped assets.</p>
 
@@ -1009,7 +278,7 @@
 
         <p>This is the base layer. Without clean asset submission, every other layer becomes weak.</p>
 
-        <h3>OnChain Risk Scoring and Classification.</h3>
+        <h2>OnChain Risk Scoring and Classification.</h2>
 
         <p>After submission, the asset needs a risk identity.</p>
 
@@ -1036,7 +305,7 @@
 
         <p>That is the purpose of embedded risk classification.</p>
 
-        <h3>Insurance Underwriting</h3>
+        <h2>Insurance Underwriting</h2>
 
         <p>After risk scoring, insurance providers can underwrite part or all of the asset’s cash flows.</p>
 
@@ -1091,7 +360,7 @@
           </table>
         </div>
 
-        <h3>Metadata Embedding and Token Minting</h3>
+        <h2>Metadata Embedding and Token Minting</h2>
 
         <p>Once the asset has been submitted, scored, and possibly insured, the token can be minted.</p>
 
@@ -1111,13 +380,13 @@
           <li>What compliance restrictions apply?</li>
         </ul>
 
-        <h3>Secondary Trading and Cash-Flow Distribution</h3>
+        <h2>Secondary Trading and Cash-Flow Distribution</h2>
 
         <p>After minting, the asset can move into secondary markets.</p>
 
         <p>These tokenized assets become transferable on the Real network, and lists automated settlement and cash-flow distribution as tokenization benefits.</p>
 
-        <h3>Tokenomics</h3>
+        <h2>Tokenomics</h2>
 
         <p>$ASSET is the native coordination asset of the Real network. Its role goes beyond basic gas payments. It is designed to support network fees, validator staking, business-validator participation, governance, and ecosystem incentives. In Real’s model, the token sits at the center of both chain security and RWA accountability.</p>
 
@@ -1125,7 +394,7 @@
 
         <p>The key point is that $ASSET is not only used by technical validators. It is also tied to financial actors inside the asset lifecycle. Tokenizers, risk scorers, and insurers can stake into the system, earn rewards, and face penalties if they fail to perform their roles properly. This makes $ASSET a collateral layer for both consensus security and business-level responsibility.</p>
 
-        <h3>Token Function Streams</h3>
+        <h2>Token Function Streams</h2>
 
         <div class="table-wrap" role="region" aria-label="Token function streams table" tabindex="0">
           <table>
@@ -1161,7 +430,7 @@
           </table>
         </div>
 
-        <h3>$ASSET Comparison with other Typical RWA tokens.</h3>
+        <h2>$ASSET Comparison with other Typical RWA tokens.</h2>
 
         <div class="table-wrap" role="region" aria-label="$ASSET comparison table" tabindex="0">
           <table>
@@ -1209,7 +478,7 @@
 
         <p>$ASSET is designed to support Real’s network security and incentive structure. Technical validators stake it to secure the chain, while business validators stake it to align incentives for tokenization, risk scoring, and insurance.</p>
 
-        <h3>Staking</h3>
+        <h2>Staking</h2>
 
         <p>Real’s staking model has three layers.</p>
 
@@ -1229,7 +498,7 @@
           </a>
         </figure>
 
-        <h3>Risk Model</h3>
+        <h2>Risk Model</h2>
 
         <p>Real’s risk model can be understood through traditional credit-risk logic:</p>
 
@@ -1239,13 +508,13 @@
 
         <p>Real’s design can make this risk more transparent by linking scores to onchain metadata. With oracles and data feeds such as RedStone, those scores may update as asset conditions change. The result is a clearer framework for risk-adjusted yield pools, where investors compare not only APY, but also asset quality, default risk, insurance coverage, and metadata transparency.</p>
 
-        <h3>Security Model</h3>
+        <h2>Security Model</h2>
 
         <p>Real’s security model can be viewed in layers. At the base is the consensus layer, secured through Cosmos-style validators that handle block production, finality, governance, and network integrity. Above that is the smart-contract layer, where asset rules, metadata, minting logic, cash-flow distribution, redemption, and claim processes are handled through modular on-chain logic. The third layer is the accountability layer: technical validators can be slashed for consensus failures, while business validators are intended to remain accountable for tokenization, risk scoring, or insurance-related responsibilities.</p>
 
         <p>For RWAs, the biggest risks are single points of failure such as weak custodians, bad asset validation, faulty risk models, insurer default, oracle failure, or smart-contract bugs. Real aims to reduce these risks through validator staking, slashing, insurance coverage, and the Disaster Recovery Fund.</p>
 
-        <h3>$ASSET Price Framework</h3>
+        <h2>$ASSET Price Framework</h2>
 
         <p>The current price for $ASSET as at when I'm writing this blog is $0.16</p>
 
@@ -1257,23 +526,21 @@
 
         <p>$ASSET can be analyzed through a forward-looking scenario model rather than only short-term price movement. On the demand side, its value may be supported by Real’s ability to capture a share of the RWA market through tokenized debt, SME loans, private credit, green assets, and institutional asset issuance. As more assets enter the network, demand may also come from transaction fees, staking, business-validator participation, insurance activity, and governance.</p>
       </div>
-    </section>
-
-    <!-- ECOSYSTEM UPDATES -->
-    <section id="updates" class="content-section reveal">
-      <div class="section-kicker">ECOSYSTEM UPDATES.</div>
-      <h2>ECOSYSTEM UPDATES.</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#deep-dive"><span>PREVIOUS CHAPTER</span>← Inside the REAL ecosystem</a><a href="#updates"><span>NEXT CHAPTER</span>An ecosystem in motion →</a></nav></section>
+<section id="updates" class="content-section">
+      <div class="section-kicker">CHAPTER 04 <span>/</span> ECOSYSTEM</div>
+      <h1 tabindex="-1">An ecosystem in motion</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="updates">Research chapter</span></div>
 
       <div class="article-body">
         <p>I made this  section to specifically track Real Finance as a developing RWA infrastructure network.</p>
 
-        <h3>Nimbus Capital</h3>
+        <h2>Nimbus Capital</h2>
 
         <p>Nimbus Capital is one of the earliest institutional capital partners in the Real Finance ecosystem. Its $25 million commitment matters not only as funding, but also as a signal of institutional confidence in Real’s effort to build regulation-ready infrastructure for tokenized real-world assets. Real’s official announcement describes Nimbus as a private alternative investment group focused on connecting emerging digital economies with institutional capital markets.</p>
 
         <p>For an RWA-focused Layer 1, this kind of backing matters. Real does not only need developers and users; it also needs capital partners, regulated financial relationships, strategic stakeholders, and institutions willing to bring real assets into compliant onchain environments. Nimbus may also contribute strategic input through institutional due diligence, governance awareness, and cross border capital relationships. That could help Real strengthen asset onboarding, compliance positioning, financial partnerships and long term credibility.</p>
 
-        <h3>RedStone Integration</h3>
+        <h2>RedStone Integration</h2>
 
         <p><a href="https://blog.redstone.finance/2026/03/30/real-integrates-redstone-stack-to-turn-tokenized-assets-into-institutional-grade-instruments/" target="_blank" rel="noopener noreferrer">RedStone Integration</a></p>
 
@@ -1287,13 +554,13 @@
           <li>Is the issuer creditworthy?</li>
         </ul>
 
-        <h3>Stobox Partnership</h3>
+        <h2>Stobox Partnership</h2>
 
         <p>Stobox adds a regulatory and tokenization infrastructure angle to Real’s ecosystem. The partnership focuses on interoperability, compliant tokenization, and collaboration between regulated tokenization platforms and RWA-focused blockchain infrastructure.</p>
 
         <p>This matters because RWAs sit between two worlds: compliance and decentralization. Stobox’s role can support KYC/AML flows, jurisdictional rules, digital securities infrastructure, and compliant issuance frameworks.</p>
 
-        <h3>Staking Campaign</h3>
+        <h2>Staking Campaign</h2>
 
         <p>Real’s staking campaign gives early participants a way to stake $ASSET before full network launch. The staking page describes a pre-launch reward program with time-weighted rewards, which encourages longer participation and early alignment with the network.</p>
 
@@ -1301,17 +568,15 @@
 
         <p>If you mention exchange venues, use only the ones explicitly shown on the staking page or in a separate verified listing announcement.</p>
       </div>
-    </section>
-
-    <!-- COMPARISON HUB -->
-    <section id="comparison" class="content-section reveal">
-      <div class="section-kicker">COMPARISON HUB</div>
-      <h2>COMPARISON HUB</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#technical"><span>PREVIOUS CHAPTER</span>← The architecture of trust</a><a href="#comparison"><span>NEXT CHAPTER</span>REAL in the wider landscape →</a></nav></section>
+<section id="comparison" class="content-section">
+      <div class="section-kicker">CHAPTER 05 <span>/</span> ECOSYSTEM</div>
+      <h1 tabindex="-1">REAL in the wider landscape</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="comparison">Research chapter</span></div>
 
       <div class="article-body">
         <p>This section would serve as a comparison between REAL and other L1's and also comparison with other RWA platforms.</p>
 
-        <h3>Real vs Other Layer-1</h3>
+        <h2>Real vs Other Layer-1</h2>
 
         <p>Ethereum, Solana and other general-purpose chains are powerful settlement environments, but they were not designed specifically for regulated real-world assets. They can support RWA applications, but much of the RWA logic often lives at the application layer, where compliance, issuer checks, risk metadata, asset verification, insurance, and legal workflows are handled by external protocols or centralized operators.</p>
 
@@ -1366,7 +631,7 @@
           </table>
         </div>
 
-        <h3>REAL vs Other RWA Tokenisation Platforms</h3>
+        <h2>REAL vs Other RWA Tokenisation Platforms</h2>
 
         <p>I'll be using Centrifuge, Maple and Ondo for comparison because they represent different parts of the RWA market.</p>
 
@@ -1432,17 +697,15 @@
 
         <p>Centrifuge, Maple, and Ondo each focus on important RWA verticals: asset financing, credit markets, and tokenized yield products. Real’s differentiation is that it tries to move the RWA lifecycle deeper into the base infrastructure layer.</p>
       </div>
-    </section>
-
-    <!-- FUTURE OF BLOCKCHAIN INFRASTRUCTURE -->
-    <section id="future" class="content-section reveal">
-      <div class="section-kicker">The Future of Blockchain Infrastructure.</div>
-      <h2>The Future of Blockchain Infrastructure.</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#updates"><span>PREVIOUS CHAPTER</span>← An ecosystem in motion</a><a href="#future"><span>NEXT CHAPTER</span>Beyond the monolithic chain →</a></nav></section>
+<section id="future" class="content-section">
+      <div class="section-kicker">CHAPTER 06 <span>/</span> FOUNDATIONS</div>
+      <h1 tabindex="-1">Beyond the monolithic chain</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="future">Research chapter</span></div>
 
       <div class="article-body">
         <p>Web3 has evolved beyond token swaps and NFTs. As of now, it  includes gaming, decentralized finance, onchain identity, social apps, and tokenized real-world assets. That level of usage puts stress on Ethereum’s architecture. The system that helped spark the decentralized revolution is starting to show its limits.</p>
 
-        <h3>Monolithic Is Dead. Modular Is becoming the Standard.</h3>
+        <h2>Monolithic Is Dead. Modular Is becoming the Standard.</h2>
 
         <p>Blockchains built to handle execution, consensus, settlement and data storage on a single layer created hard ceilings on throughput and cost. Modular architecture breaks those functions apart  each layer optimized independently, each upgradeable without destabilizing the rest.</p>
 
@@ -1460,12 +723,10 @@
 
         <p>The architecture decisions being made in 2025-2026 — modular stacks, ZK rollups, on-chain settlement rails — are the decisions that will define what enterprise infrastructure looks like for the next decade.</p>
       </div>
-    </section>
-
-    <!-- FINAL VERDICT -->
-    <section id="verdict" class="content-section reveal">
-      <div class="section-kicker">Final Verdict</div>
-      <h2>Final Verdict</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#comparison"><span>PREVIOUS CHAPTER</span>← REAL in the wider landscape</a><a href="#verdict"><span>NEXT CHAPTER</span>The thesis, decoded →</a></nav></section>
+<section id="verdict" class="content-section">
+      <div class="section-kicker">CHAPTER 07 <span>/</span> FOUNDATIONS</div>
+      <h1 tabindex="-1">The thesis, decoded</h1><div class="article-meta"><span class="avatar avatar-small">GD</span><span>GeekyDamian</span><span class="meta-dot">·</span><time datetime="2026-05-28">May 28, 2026</time><span class="meta-dot">·</span><span data-read-time="verdict">Research chapter</span></div>
 
       <div class="article-body">
         <p>This section would bring an end to this research blog.</p>
@@ -1480,151 +741,31 @@
 
         <p>Real’s long term relevance will not be decided by the size of the RWA narrative alone. It will be decided by whether its infrastructure can turn real-world assets into credible, risk-priced, and institution ready onchain markets.</p>
       </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources" class="content-section reveal">
-      <div class="section-kicker">Resources:</div>
-      <h2>Resources:</h2>
+    <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="#future"><span>PREVIOUS CHAPTER</span>← Beyond the monolithic chain</a><a href="#resources"><span>KEEP EXPLORING</span>Sources &amp; further reading →</a></nav></section>
+<section id="resources" class="content-section">
+      <div class="section-kicker">THE READING LIST</div>
+      <h1 tabindex="-1">Go to the source.</h1><p class="resource-intro">The documentation, announcements, and further reading behind this research. Follow the links and explore the ideas for yourself.</p>
 
       <div class="resource-grid">
-        <a class="resource-link" href="https://gitbook.real.finance/docs/" target="_blank" rel="noopener noreferrer">Real GitBook</a>
-        <a class="resource-link" href="https://www.real.finance/" target="_blank" rel="noopener noreferrer">Real Finance</a>
-        <a class="resource-link" href="https://www.real.finance/blog/how-realfin-connects-traditional-finance-and-blockchain" target="_blank" rel="noopener noreferrer">TradFi + Blockchain</a>
-        <a class="resource-link" href="https://www.real.finance/blog" target="_blank" rel="noopener noreferrer">Real Blog</a>
-        <a class="resource-link" href="https://www.real.finance/blog/nimbus-capital-commits-25-million-to-real-finance" target="_blank" rel="noopener noreferrer">Nimbus</a>
-        <a class="resource-link" href="https://www.real.finance/blog/tokenizing-assets-via-real-blockchain-enhancing-liquidity" target="_blank" rel="noopener noreferrer">Tokenizing Assets</a>
-        <a class="resource-link" href="https://blog.redstone.finance/2026/03/30/real-integrates-redstone-stack-to-turn-tokenized-assets-into-institutional-grade-instruments/" target="_blank" rel="noopener noreferrer">RedStone</a>
-        <a class="resource-link" href="https://blocsys.com/modular-blockchain-architecture-scalable-networks-2026/" target="_blank" rel="noopener noreferrer">Modular Architecture</a>
+        <a class="resource-link" href="https://gitbook.real.finance/docs/" target="_blank" rel="noopener noreferrer"><span>Real GitBook</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://www.real.finance/" target="_blank" rel="noopener noreferrer"><span>Real Finance</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://www.real.finance/blog/how-realfin-connects-traditional-finance-and-blockchain" target="_blank" rel="noopener noreferrer"><span>TradFi + Blockchain</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://www.real.finance/blog" target="_blank" rel="noopener noreferrer"><span>Real Blog</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://www.real.finance/blog/nimbus-capital-commits-25-million-to-real-finance" target="_blank" rel="noopener noreferrer"><span>Nimbus</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://www.real.finance/blog/tokenizing-assets-via-real-blockchain-enhancing-liquidity" target="_blank" rel="noopener noreferrer"><span>Tokenizing Assets</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://blog.redstone.finance/2026/03/30/real-integrates-redstone-stack-to-turn-tokenized-assets-into-institutional-grade-instruments/" target="_blank" rel="noopener noreferrer"><span>RedStone</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <a class="resource-link" href="https://blocsys.com/modular-blockchain-architecture-scalable-networks-2026/" target="_blank" rel="noopener noreferrer"><span>Modular Architecture</span><svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       </div>
 
       <figure class="doc-figure">
-        <a href="https://imgbb.com/" target="_blank" rel="noopener noreferrer">
-          <img src="https://i.ibb.co/KcFGTKLq/dark-logo.png" alt="Real Finance dark logo" loading="lazy" />
+        <a href="https://www.real.finance/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/real-finance-logo-blue.png" alt="REAL Finance white logo on a blue background" loading="lazy" />
         </a>
       </figure>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section reveal">
-      <div>
-        <h2>Contact</h2>
-        <p>For questions, research comments, or collaboration, reach out through X.</p>
       </div>
-
-      <a class="btn" href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">GeekyDamian on X</a>
-    </section>
+    </div>
   </main>
-
-  <footer>
-    <p>
-      Written by
-      <a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">GeekyDamian</a>.
-    </p>
-    <p>Published on May 28th, 2026.</p>
-  </footer>
-
-  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-    ↑
-  </button>
-
-  <script>
-    // Mobile navigation toggle
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
-      menuBtn.textContent = isOpen ? "Close" : "Menu";
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.textContent = "Menu";
-      });
-    });
-
-    // Reading progress bar
-    const progressBar = document.getElementById("progressBar");
-
-    function updateProgressBar() {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progressBar.style.width = `${progress}%`;
-    }
-
-    // Reveal-on-scroll animation
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.08 }
-    );
-
-    document.querySelectorAll(".reveal").forEach((section) => {
-      revealObserver.observe(section);
-    });
-
-    // Active desktop navigation state
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = [...document.querySelectorAll("main section[id]")];
-
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === `#${entry.target.id}`
-            );
-          });
-        });
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px",
-        threshold: 0.01,
-      }
-    );
-
-    sections.forEach((section) => {
-      navObserver.observe(section);
-    });
-
-    // Back-to-top button
-    const backToTop = document.getElementById("backToTop");
-
-    function updateBackToTop() {
-      backToTop.classList.toggle("show", window.scrollY > 900);
-    }
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        updateProgressBar();
-        updateBackToTop();
-      },
-      { passive: true }
-    );
-
-    updateProgressBar();
-    updateBackToTop();
-  </script>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><a href="#home" class="brand" aria-label="Real Finance Decoded home"><img class="brand-mark" src="assets/real-finance-logo-blue.png" alt="" width="40" height="40"><span>real finance<span class="brand-caption">D E C O D E D</span></span></a><p>Independent thinking.<br>Real-world perspective.</p><nav aria-label="Footer navigation"><a href="#explore">Research</a><a href="#resources">Resources</a><a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">Connect on X <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav></div><div class="footer-bottom"><span>© 2026 Real Finance Decoded</span><span>Researched &amp; written by <a href="https://x.com/GeekyDamian" target="_blank" rel="noopener noreferrer">GeekyDamian</a></span><span>Published May 28, 2026</span></div></div></footer>
 </body>
-                  </html>
+</html>
